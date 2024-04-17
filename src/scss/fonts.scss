@@ -1,0 +1,243 @@
+/* Lora fonts */
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-SemiBoldItalic.ttf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/Lora/Lora-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Inter fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-ExtraLight.ttf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Set up paranthesis font */
+p, span, a, div, .outline-btn, .filled-btn {
+    font-family: 'Inter';
+    color: $black;
+}
+
+/* Title */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora' !important;
+    color: $black;
+
+    /* Inherit font from titles */
+    a, span {
+        font-family: inherit;
+    }
+}
+
+/* Sizes */
+.fs- {
+    &10 {
+        font-size: 10px;
+    }
+    &12 {
+        font-size: 12px;
+    }
+    &14 {
+        font-size: 14px;
+    }
+    &15 {
+        font-size: 15px;
+    }
+    &16 {
+        font-size: 16px;
+    }
+    &18 {
+        font-size: 18px;
+    }
+    &20 {
+        font-size: 20px;
+    }
+    &22 {
+        font-size: 22px;
+    }
+    &24 {
+        font-size: 24px;
+    }
+    &26 {
+        font-size: 26px;
+    }
+    &30 {
+        font-size: 30px;
+    }
+    &32 {
+        font-size: 32px;
+    }
+    &36 {
+        font-size: 36px;
+    }
+    &38 {
+        font-size: 38px;
+    }
+    &40 {
+        font-size: 40px;
+    }
+    &42 {
+        font-size: 42px;
+    }
+    &48 {
+        font-size: 48px;
+    }
+    &52 {
+        font-size: 52px;
+    }
+}
+
+/* Weights */
+.fw- {
+    &100 {
+        font-weight: 100;
+    }
+
+    &200 {
+        font-weight: 200;
+    }
+
+    &300 {
+        font-weight: 300;
+    }
+
+    &400 {
+        font-weight: 400;
+    }
+
+    &500 {
+        font-weight: 500;
+    }
+
+    &600 {
+        font-weight: 600;
+    }
+
+    &700 {
+        font-weight: 700;
+    }
+
+    &800 {
+        font-weight: 800;
+    }
+}
+
+/* Text align */
+.ta- {
+    &left {
+        text-align: left;
+    }
+    &center {
+        text-align: center;
+    }
+    &right {
+        text-align: right;
+    }
+}

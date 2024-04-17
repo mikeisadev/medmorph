@@ -1,0 +1,62 @@
+a[role=button] {
+    text-decoration: none !important;
+}
+
+.outline-btn {
+    border: 1px solid $primary;
+    padding: 6px 10px;
+    background: transparent;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: $primary;
+    cursor: pointer;
+    transition: 300ms all;
+    font-size: 14px;
+
+    p, span {
+        color: $primary;
+    }
+
+    i {
+        font-size: 24px;
+    }
+
+    &:hover {
+        color: $white;
+        background: $primary;
+
+        p {
+            color: $white;
+        }
+    }
+}
+
+.filled-btn {
+    border: 1px solid $primary;
+    padding: 6px 10px;
+    background: $primary;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: $white;
+    cursor: pointer;
+    transition: 300ms all;
+    font-size: 14px;
+
+    p, span {
+        color: $white;
+    }
+
+    i {
+        font-size: 24px;
+    }
+
+    &:hover {
+        background: $primaryHover;
+    }
+}

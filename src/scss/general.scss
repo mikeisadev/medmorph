@@ -1,0 +1,225 @@
+/* Header */
+#header {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    min-height: 80px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .logo {
+
+        a {
+            text-decoration: none;
+        }
+
+    }
+
+    .h-cont {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+
+        .header-endpoints-wrap {
+            margin-right: 0;
+            margin-left: auto;
+        }
+
+    }
+
+    .menu {
+        padding: 0px;
+        list-style: none;
+        display: flex;
+        gap: 25px;
+
+        li {
+            position: relative;
+
+            a {
+                text-decoration: none;
+                position: relative;
+                height: 100%;
+                display: block;
+            }
+
+            &:hover {
+
+                a::after  {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    right: 0;
+                    height: 1.5px;
+                    width: 100%;
+                    background: $primary;
+                }
+
+            }
+        }
+    }
+}
+
+/* Logo */
+.mmorph-black {
+    color: $black;
+}
+
+.mmorph-primary {
+    color: $primary !important;
+}
+
+/* Dropdown menus and btns */
+.dropdown-btn > * {
+    pointer-events: none;
+}
+
+/* Sections */
+.above-the-fold {
+    height: 100vh;
+    position: relative;
+    background: $bg1;
+
+    .section-actions {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+/* Boxes & components */
+.single-exam {
+
+    .exam-meta p:not(:last-child)::after {
+        content: "\F309";
+        font-family: 'bootstrap-icons';
+        margin: 0 5px;
+    }
+
+}
+
+.single-box {
+    border: 1px solid $border1;
+    padding: 20px 15px;
+}
+
+/* Floating */
+.header-user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    background: $white;
+    width: 200px;
+
+    .dropdown-el {
+        padding: 15px;
+    }
+}
+
+/* Listings */
+.chapters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .chapter-list-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 12px;
+        background: #f0f0f0;
+        cursor: pointer;
+
+        .chapter-list-left {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .position {
+            font-family: 'Lora';
+            font-size: 18px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 50%;
+        }
+    }
+
+    .chapter-list-body {
+        overflow: hidden;
+        border-color: $border2;
+        border-style: solid;
+        border-width: 0 1px 1px 1px;
+        transition: height 300ms;
+
+        .body-inner {
+            padding: 10px;
+        }
+
+        .attachments-btn {
+            display: flex;
+            gap: 15px;
+        }
+
+        &.closed {
+            height: 0px !important;
+        }
+
+        button i {
+            font-size: 18px !important;
+        }
+    }
+}
+
+/* Paragraph listing */
+.paragraph-acc {
+
+    .paragraph-acc-inner {
+
+        .paragraph-acc-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-color: $border2;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            padding: 15px 10px;
+            cursor: pointer;
+
+            i {
+                width: max-content;
+                height: max-content;
+                display: block;
+                transition: 300ms all;
+                font-size: 18px;
+            }
+        }
+
+        .paragraph-acc-body {
+            transition: height 300ms ease-in;
+            border-color: $border2;
+            border-width: 0px 1px 1px 1px;
+            border-style: solid;
+            overflow: hidden;
+            height: auto;
+
+            .content-wrap {
+                padding: 10px;
+            }
+
+            &.closed {
+                height: 0px !important;
+                border: 0px;
+            }
+        }
+
+    }
+
+}
