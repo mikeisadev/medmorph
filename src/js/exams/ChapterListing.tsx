@@ -1,24 +1,32 @@
-import { useState, useEffect, useId } from "react"
-import axios from "axios"
-import { examChaptersEndpoint } from "../../config"
+import { useState, useEffect } from "react"
+import http from "../../http";
+import { examChaptersEP } from "../../config"
 import Loader from "../components/Loader";
 import ChapterListEl from "../components/ChapterListEl";
 
 type ChapterUrls = {
-    chapter: string
+    chapter: string;
+}
+
+type HasParagraphs = {
+    count: number;
 }
 
 interface Chapter {
-    chapter_title: string,
-    urls: ChapterUrls
+    chapter_title: string;
+    urls: ChapterUrls;
+    has_paragraphs: HasParagraphs | false;
+    has_3d_models: boolean;
+    has_mind_maps: boolean;
 }
 
 export default function ChapterListing() {
     const [chapters, setChapters] = useState<null|Array<Chapter>>(null);
 
     useEffect(() => {
-        axios.get(examChaptersEndpoint + '?exam-slug=' + location.pathname)
+        http.get(examChaptersEP + '?exam-slug=' + location.pathname)
             .then(res => {
+                console.log(res.data)
                 setChapters(res.data)
             })
             .catch(err => {
@@ -31,12 +39,14 @@ export default function ChapterListing() {
         { chapters ?
             <div className="chapters-list">
                 { chapters.map((value, index) => {
-                    console.log(value.urls.chapter)
                     return <ChapterListEl 
                             props={{
                                 chapterTitle: value.chapter_title,
                                 position: index+1,
-                                chapterURL: value.urls.chapter
+                                chapterURL: value.urls.chapter,
+                                paragraphsCount: value.has_paragraphs ? value.has_paragraphs.count : 0,
+                                has3DModel: value.has_3d_models,
+                                hasMindMap: value.has_mind_maps
                             }}
                         />
                 })}

@@ -8,7 +8,7 @@
 </head>
 <body <?php body_class(); ?>>
     <header id="header" class="w-1200 m-auto index-5 <?php echo is_home() ? 'absolute' : ''; ?>">
-        <?= mmorph_get_template(name: 'logo'); ?>
+        <?= mp_get_template(name: 'logo'); ?>
         <div class="h-cont nav-menu justify-center">
             <?= wp_nav_menu(['menu' => 'Header']); ?>
         </div>
@@ -21,7 +21,16 @@
             </div>
         </div>
         <div class="dropdown-menu header-user-dropdown hide" data-dropdown-menu="user-endpoints">
-            <div class="dropdown-el"><a href="<?= esc_attr( get_site_url() . '/login' ); ?>">Accedi</a></div>
-            <div class="dropdown-el"><a href="<?= esc_attr( get_site_url() . '/register' ); ?>">Registrati</a></div>
+            <?php 
+            foreach (wp_get_nav_menu_items('menù-di-accesso') as $item) {
+                ?>
+                <div class="dropdown-el">
+                    <a href="<?= esc_attr( $item->url ) ?>">
+                        <?= esc_html( $item->title ); ?>
+                    </a>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </header>

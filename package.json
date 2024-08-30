@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build src/index src/viewer",
+    "build": "wp-scripts build src/App src/viewer src/js/partials/Home src/Register src/Login src/js/user/my-account/MyAccountRenderer",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
     "format": "wp-scripts format",
@@ -14,7 +14,7 @@
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "packages-update": "wp-scripts packages-update",
     "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start src/index src/viewer",
+    "start": "wp-scripts start src/App src/viewer src/js/partials/Home src/Register src/Login src/js/user/my-account/MyAccountRenderer",
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js"
   },
@@ -31,6 +31,7 @@
     "@types/dompurify": "^3.0.5",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "react-router-dom": "^6.26.1",
     "typescript": "^5.4.5"
   }
 }

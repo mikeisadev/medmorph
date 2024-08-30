@@ -1,6 +1,7 @@
-<?php get_header(); ?>
+<?php 
 
-<?php
+get_header();
+
 /**
  * Note add this validation before the page loads inside a
  * proper php class.
@@ -38,7 +39,7 @@ if ( !wp_is_uuid($src_id) ) {
             </div>
             <h2 class="fs-24 fw-500 w-50 ta-center"><?php echo get_the_title( get_post_id_by_uuid($src_id) ); ?></h2>
             <div class="w-25 ta-right">
-                x paragrafi
+                <?php echo mp_count_chapter_paragraphs($src_id); ?>
             </div>
         </div>
         <?php

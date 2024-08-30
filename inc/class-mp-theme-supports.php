@@ -1,6 +1,6 @@
 <?php
 
-namespace MMorph\Inc\Theme;
+namespace Moorph\Inc\Theme;
 
 defined( 'ABSPATH' ) || exit;
 

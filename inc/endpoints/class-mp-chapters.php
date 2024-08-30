@@ -1,8 +1,10 @@
 <?php
 
-namespace MMorph\Inc\Theme\Endpoints;
+namespace Moorph\Inc\Theme\Endpoints;
 
 defined( 'ABSPATH' ) || exit;
+
+use Moorph\Inc\Config;
 
 class Chapters {
 
@@ -33,8 +35,8 @@ class Chapters {
      */
     public function register_chapters_route() {
         register_rest_route(
-            'mmorph/v1',
-            'chapter',
+            Config::RAPI_EP_NAMESPACE,
+            'exam/chapter',
             [
                 'methods' => 'GET',
                 'callback' => [$this, 'get_chapter_paragraphs']

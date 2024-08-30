@@ -1,5 +1,5 @@
 <?php
-namespace MMorph\Inc\Theme;
+namespace Moorph\Inc\Theme;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -12,7 +12,7 @@ class PostTypes {
      * Post types to register on this theme.
      */
     private array $postTypes = [
-        'mmp_exams' => [
+        'mp_exams' => [
             'label'                 => 'Esami',
             'labels'                => [
                 'name'                  => 'Esami',
@@ -43,7 +43,7 @@ class PostTypes {
             'rewrite'               => ['slug' => 'esame'],
             'supports'              => ['title']
         ],
-        'mmp_chapters' => [
+        'mp_chapters' => [
             'label'                 => 'Capitoli',
             'labels'                => [
                 'name'                  => 'Capitoli',
@@ -73,7 +73,7 @@ class PostTypes {
             'show_in_rest'          => true,
             'supports'              => ['title']
         ],
-        'mmp_paragraphs' => [
+        'mp_paragraphs' => [
             'label'                 => 'Paragrafi',
             'labels'                => [
                 'name'                  => 'Paragrafi',
@@ -103,7 +103,7 @@ class PostTypes {
             'show_in_rest'          => true,
             'supports'              => ['title', 'editor']
         ],
-        'mmp_3dmodels' => [
+        'mp_3dmodels' => [
             'label'                 => 'Modelli 3D',
             'labels'                => [
                 'name'                  => 'Modelli 3D',
@@ -133,7 +133,7 @@ class PostTypes {
             'show_in_rest'          => true,
             'supports'              => ['title']
         ],
-        'mmp_mindmaps' => [
+        'mp_mindmaps' => [
             'label'                 => 'Mappe concettuali',
             'labels'                => [
                 'name'                  => 'Mappe concettuali',
@@ -151,6 +151,66 @@ class PostTypes {
             ],
             'description'           => 'In questa sezione potrai gestire tutte le mappe o aggiungerne delle nuove.',
             'menu_icon'             => 'dashicons-networking',
+            'public'                => true,
+            'publicly_queryable'    => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'query_var'             => true,
+            'capability_type'       => 'post',
+            'has_archive'           => false,
+            'hierarchical'          => false,
+            'menu_position'         => 20,
+            'show_in_rest'          => true,
+            'supports'              => ['title']
+        ],
+        'mp_expimg' => [
+            'label'                 => 'Immagini esplose',
+            'labels'                => [
+                'name'                  => 'Immagini esplose',
+                'singular_name'         => 'Immagine esplosa',
+                'menu_name'             => 'Immagini esplose',
+                'all_items'             => 'Tutti i modelli',
+                'add_new'               => 'Aggiungi una nuova immagine esplosa',
+                'add_new_item'          => 'Aggiungi una nuova immagine esplosa',
+                'edit_item'             => 'Modifica immagine esplosa',
+                'new_item'              => 'Nuova immagine esplosa',
+                'view_item'             => 'Visualizza immagine esplosa',
+                'search_items'          => 'Cerca immagine esplosa',
+                'not_found'             => 'Nessuna immagine esplosa trovata',
+                'not_found_in_trash'    => 'Nessuna immagine esplosa nel cestino'
+            ],
+            'description'           => 'In questa sezione potrai gestire tutte le mappe o aggiungerne delle nuove.',
+            'menu_icon'             => 'dashicons-images-alt2',
+            'public'                => true,
+            'publicly_queryable'    => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'query_var'             => true,
+            'capability_type'       => 'post',
+            'has_archive'           => false,
+            'hierarchical'          => false,
+            'menu_position'         => 20,
+            'show_in_rest'          => true,
+            'supports'              => ['title']
+        ],
+        'mp_usernotes' => [
+            'label'                 => 'Note utenti',
+            'labels'                => [
+                'name'                  => 'Note utenti',
+                'singular_name'         => 'Immagine esplosa',
+                'menu_name'             => 'Note utenti',
+                'all_items'             => 'Tutti i modelli',
+                'add_new'               => 'Aggiungi una nuova immagine esplosa',
+                'add_new_item'          => 'Aggiungi una nuova immagine esplosa',
+                'edit_item'             => 'Modifica immagine esplosa',
+                'new_item'              => 'Nuova immagine esplosa',
+                'view_item'             => 'Visualizza immagine esplosa',
+                'search_items'          => 'Cerca immagine esplosa',
+                'not_found'             => 'Nessuna immagine esplosa trovata',
+                'not_found_in_trash'    => 'Nessuna immagine esplosa nel cestino'
+            ],
+            'description'           => 'In questa sezione potrai gestire tutte le mappe o aggiungerne delle nuove.',
+            'menu_icon'             => 'dashicons-text-page',
             'public'                => true,
             'publicly_queryable'    => true,
             'show_ui'               => true,
@@ -209,7 +269,7 @@ class PostTypes {
      */
     public function exams_fields() {
         Container::make( 'post_meta', 'Dettagli esame' )
-        ->where( 'post_type', '=', 'mmp_exams' )
+        ->where( 'post_type', '=', 'mp_exams' )
         ->add_fields([
             Field::make( 'image', 'exam_cover', 'Immagine di copertina' ),
             Field::make( 'textarea', 'exam_description', 'Breve descrizione' ),
@@ -219,7 +279,7 @@ class PostTypes {
                 ->set_types( array(
                     array(
                         'type'      => 'post',
-                        'post_type' => 'mmp_chapters',
+                        'post_type' => 'mp_chapters',
                     )
                 ) )
         ]);
@@ -230,7 +290,7 @@ class PostTypes {
      */
     public function chapters_fields() {
         Container::make( 'post_meta', 'Configurazione capitolo' )
-        ->where( 'post_type', '=', 'mmp_chapters' )
+        ->where( 'post_type', '=', 'mp_chapters' )
         ->add_fields([
             Field::make( 'text', 'chapter_uuid', 'UUID unico (ignora questo dato)' )
                 ->set_default_value( wp_generate_uuid4() )
@@ -240,7 +300,7 @@ class PostTypes {
                 ->set_types( array(
                     array(
                         'type'      => 'post',
-                        'post_type' => 'mmp_paragraphs',
+                        'post_type' => 'mp_paragraphs',
                     )
             ) ),
             Field::make( 'association', 'chapter_3d_models', 'Inserisci modelli 3D per questo capitolo' )

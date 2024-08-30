@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
-import { singleChapterEndpoint } from "../../config";
+import http from "../../http";
+import { singleChapterEP } from "../../config";
 import ParagraphAccordion from "../components/ParagraphAccordion";
 import Button from "../components/Button";
 import Loader from "../components/Loader";
@@ -14,7 +14,7 @@ export default function ChaptersViewer() {
     const [paragraphs, setParagraphs] = useState<null|Array<Chapter>>(null);
 
     useEffect(() => {
-        axios.get(singleChapterEndpoint + location.search)
+        http.get(singleChapterEP + location.search)
             .then(res => {
                 console.log(res.data)
                 setParagraphs(res.data)
@@ -26,6 +26,9 @@ export default function ChaptersViewer() {
 
     return (
         <>
+            <p>
+                
+            </p>
             {   
             paragraphs ? 
                 <>
@@ -35,6 +38,7 @@ export default function ChaptersViewer() {
                             title: value.title,
                             content: value.content
                         }} />
+
                     })
                 }
                 <div className="viewer-actions flex gap-20 space-evenly align-center py-40">

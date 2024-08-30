@@ -1,8 +1,10 @@
 <?php
 
-namespace MMorph\Inc\Theme\Endpoints;
+namespace Moorph\Inc\Theme\Endpoints;
 
 defined( 'ABSPATH' ) || exit;
+
+use Moorph\Inc\Config;
 
 class Exams {
 
@@ -33,8 +35,8 @@ class Exams {
      */
     public function register_exams_route() {
         register_rest_route(
-            'mmorph/v1',
-            'exam-chapters',
+            Config::RAPI_EP_NAMESPACE,
+            'exam/chapters',
             [
                 'methods' => 'GET',
                 'callback' => [$this, 'get_exam_chapters']
@@ -66,7 +68,7 @@ class Exams {
         $slug = explode('/', $slug);
 
         // Get the exam ID.
-        $examId = get_page_by_path(end($slug), ARRAY_A, 'mmp_exams')['ID'];
+        $examId = get_page_by_path(end($slug), ARRAY_A, 'mp_exams')['ID'];
 
         // Get exam chapters.
         $chapters = carbon_get_post_meta($examId, 'exam_chapters');
@@ -77,11 +79,13 @@ class Exams {
             foreach($chapters as $chapter) {
                 $chapterId = $chapter['id'];
                 $chapterUUID = carbon_get_post_meta( $chapterId, 'chapter_uuid' );
+
+                $paragraphs = carbon_get_post_meta( $chapterId, 'chapter_paragraphs' );
     
                 $chaps[] = [
                     'chapter_title'         => get_the_title( $chapterId ),
                     'chapter_brief_desc'    => carbon_get_post_meta( $chapterId, 'chapter_brief_desc' ),
-                    'has_paragraphs'        => carbon_get_post_meta( $chapterId, 'chapter_paragraphs' ) ? true : false,
+                    'has_paragraphs'        => $paragraphs ? ['count' => count($paragraphs)] : false,
                     'has_3d_models'         => carbon_get_post_meta( $chapterId, 'chapter_3d_models' ) ? true : false,
                     'has_mind_maps'         => carbon_get_post_meta( $chapterId, 'chapter_mind_maps' ) ? true : false,
                     'uuid'                  => $chapterUUID,

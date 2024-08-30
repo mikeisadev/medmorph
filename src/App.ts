@@ -1,9 +1,4 @@
 /**
- * Axios config.
- */
-import './axios.config';
-
-/**
  * Main script.
  */
 import './js/dropdown';

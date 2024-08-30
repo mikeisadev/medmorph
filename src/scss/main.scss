@@ -7,3 +7,18 @@
 @import "fullpages.scss";
 @import "loaders.scss";
 @import "mobile.scss";
+@import "forms.scss";
+@import "popup.scss";
+
+* {
+    transition: 500ms all;
+}
+
+.single-exam {
+    transition: 500ms all;
+}
+
+.single-exam:hover {
+    background: red;
+    box-shadow: 0 0 0 2 rgba(0,0,0,0)
+}

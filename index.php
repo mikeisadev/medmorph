@@ -11,6 +11,9 @@
                 <button class="filled-btn p-10">Scopri di più</button>
                 <button class="outline-btn p-10">Vedi esami disponibili</button>
             </div>
+            <div>
+                <p style="font-size:14px;">Lavora con noi e diventa autore</p>
+            </div>
         </div>
     </div>
 </div>
@@ -23,7 +26,7 @@
             <div class="section-content grid grid-3-col grid-gap-20">
                 <?php
                 $q = new WP_Query([
-                    'post_type'         => 'mmp_exams',
+                    'post_type'         => 'mp_exams',
                     'posts_per_page'    => -1,
                     'post_status'       => 'publish'
                 ]);
@@ -48,7 +51,7 @@
                                     ?>
                                 </div>
 
-                                <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="filled-btn w-max-content m-auto" role="button">Vedi esame</a>
+                                <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="filled-btn w-max-content m-auto" role="button" data-action="start-exam">Vedi esame</a>
                             </div>
                         </div>
                         <?php
@@ -60,6 +63,22 @@
                 }
                 ?>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-inner w-1200 m-auto py-40">
+        <div class="section-wrap">
+            <h2 class="fw-500 fs-30 ta-center mb-20">Lavora per Moorph</h2>
+
+            <p>Collabora con Moorph e inzia a scrivere i contenuti per noi (ci lavoriamo)</p>
+
+            <button class="outline-btn p-10">Vedi esami disponibili</button>
+
+            <p>
+                Vai su una nuova pagina e c'è il procedimento che mi ha detto Domenico (attenersi a quel modello)
+            </p>
         </div>
     </div>
 </div>

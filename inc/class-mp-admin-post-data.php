@@ -1,10 +1,10 @@
 <?php
 
-namespace MMorph\Inc\Theme;
+namespace Moorph\Inc\Admin;
 
 defined( 'ABSPATH' ) || exit;
 
-class BodyClasses {
+class PostData {
 
     /**
      * Main instance.
@@ -23,15 +23,11 @@ class BodyClasses {
     }
 
     private function __construct() {
-        add_filter('body_class', [$this, 'add_body_classes']);
+        add_action('save_post', [$this, 'handle_post_data']);
     }
 
-    /**
-     * Add custom classes to body HTML tag.
-     */
-    public function add_body_classes(array $classes): array {
-        $classes[] = get_query_var('pagename');
-        return $classes;
+    public function handle_post_data( ) {
+
     }
 
 }
