@@ -15,6 +15,7 @@ a[role=button] {
     cursor: pointer;
     transition: 300ms all;
     font-size: 14px;
+    border-radius: $btnBorderRadius;
 
     p, span {
         color: $primary;
@@ -47,6 +48,7 @@ a[role=button] {
     cursor: pointer;
     transition: 300ms all;
     font-size: 14px;
+    border-radius: $btnBorderRadius;
 
     p, span {
         color: $white;

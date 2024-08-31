@@ -7,5 +7,7 @@
         "strict": true,
         "allowSyntheticDefaultImports": true,
         "moduleResolution": "node"
-    }
+    },
+    "include": ["src"],
+    "exclude": ["assets/js", "build", "node_modules", "vendor"]
 }

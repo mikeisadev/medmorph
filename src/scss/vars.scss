@@ -1,13 +1,28 @@
-$primary: #285181;
-$primaryHover: #153d6b;
+$primary: #2cc2b6;
+$primaryHover: #10958a;
 $black: #121212;
 $white: #ffffff;
 
-$bg1: #E0EEFF;
+$bg1: #e0f9ff;
 $bgWhite: #ffffff;
-$bgTransparent: #285281a1;
-
+$bgGray: #f7f7f7;
+$bgTransparent: #2cc2b6a1;
+$aboveTheFoldBg2: #e0faff;
 $loaderBg1: #2121216e;
 
 $border1: #6c6c6c;
 $border2: #a5a5a5;
+$lightBorder: #ededed;
+
+$btnBorderRadius: 16px;
+$divBorderRadius: 18px;
+
+$fInter: 'Inter', sans-serif;
+$fLora: 'Lora', serif;
+
+$boxShadow1: 0px 4px 8px 1px rgba(0, 0, 0, 0.149);
+
+/* Old colors */
+// $primary: #285181;
+// $primaryHover: #153d6b;
+// $bgTransparent: #285281a1;

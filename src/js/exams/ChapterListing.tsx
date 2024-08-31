@@ -26,7 +26,7 @@ export default function ChapterListing() {
     useEffect(() => {
         http.get(examChaptersEP + '?exam-slug=' + location.pathname)
             .then(res => {
-                console.log(res.data)
+                console.log(res.data.response.exam)
                 setChapters(res.data)
             })
             .catch(err => {

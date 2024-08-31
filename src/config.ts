@@ -1,5 +1,3 @@
-declare var mpMetDat: any
-
 const examChaptersEP     = `${mpMetDat.rbUrl}${mpMetDat.rNamespace}exam/chapters`;
 const singleChapterEP    = `${mpMetDat.rbUrl}${mpMetDat.rNamespace}exam/chapter`;
 const userSupervisorEP   = `${mpMetDat.rbUrl}${mpMetDat.rNamespace}user/supervisor`;

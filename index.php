@@ -2,17 +2,21 @@
 
 <div class="section above-the-fold m-auto index-1 flex flex-col align-center">
     <div class="section-inner w-1200 m-auto">
-        <div class="section-wrap w-60 flex flex-col gap-40">
-            <div class="section-content flex flex-col gap-10">
-                <h1 class="fw-500 fs-38">Studia per il tuo prossimo esame di medicina con semplicità.</h1>
-                <p>Iscrivendoti su MedMorph avrai accesso a tantissimi esami della facoltà di medicina. Per ogni esame avrai tutti gli appunti necessari per supportare il tuo percorso di studi.</p>
+        <div class="section-wrap flex gap-20 m-auto">
+            <div class="content-view w-100 flex flex-col gap-40 justify-center">
+                <div class="section-content flex flex-col gap-10 pt-40">
+                    <h1 class="fw-500 fs-38">Studia per il tuo prossimo esame di medicina con semplicità.</h1>
+                    <p>Iscrivendoti su MedMorph avrai accesso a tantissimi esami della facoltà di medicina. Per ogni esame avrai tutti gli appunti necessari per supportare il tuo percorso di studi.</p>
+                </div>
+                <div class="section-cta">
+                    <div class="section-actions">
+                        <button class="filled-btn p-10">Scopri di più</button>
+                        <button class="outline-btn p-10">Vedi esami disponibili</button>
+                    </div>
+                    <p style="font-size:14px;margin: 10px 0 0 0;">Lavora con noi e diventa autore</p>
+                </div>
             </div>
-            <div class="section-actions">
-                <button class="filled-btn p-10">Scopri di più</button>
-                <button class="outline-btn p-10">Vedi esami disponibili</button>
-            </div>
-            <div>
-                <p style="font-size:14px;">Lavora con noi e diventa autore</p>
+                <div id="abf-3d-viewer" class="3d-view w-100">
             </div>
         </div>
     </div>

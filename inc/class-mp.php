@@ -15,6 +15,7 @@ use Moorph\Inc\Theme\Endpoints\User\UserSupervisor;
 use Moorph\Inc\Theme\Endpoints\User\UserLogin;
 use Moorph\Inc\Theme\Endpoints\User\StudentRegistration;
 use Moorph\Inc\Admin\PostData;
+use Moorph\Inc\Theme\UserInterfaceMods;
 
 final class Moorph {
 
@@ -96,6 +97,9 @@ final class Moorph {
         // Register post types.
         require_once MP_DIR . 'inc/class-mp-post-types.php';
 
+        // User mods
+        require_once MP_DIR . 'inc/class-mp-user-interface-mods.php';
+
         // Others.
         require_once MP_DIR . 'inc/class-mp-body-classes.php';
 
@@ -124,6 +128,7 @@ final class Moorph {
         LoadAssets::getInstance();
         PostTypes::getInstance();
         BodyClasses::getInstance();
+        UserInterfaceMods::getInstance();
 
         // Admin post data.
         PostData::getInstance();

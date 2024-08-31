@@ -1,13 +1,21 @@
 /* Header */
 #header {
-    padding: 15px 0px;
+    height: 60px;
+    min-height: 60px;
+    background: #ffffffb5;
+    backdrop-filter: blur(20px);
     display: flex;
-    justify-content: space-between;
-    height: 80px;
-    min-height: 80px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: $lightBorder;
+    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+
+    .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .logo {
 
@@ -15,6 +23,38 @@
             text-decoration: none;
         }
 
+    }
+
+    .logo-text, .main-logo a {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: left;
+        justify-content: center;
+
+        .title {
+            min-height: min-content;
+            display: flex;
+            line-height: 30px;
+        }
+
+        .site-desc {
+            display: block;
+            font-size: 10px;
+            font-family: 'Inter', sans-serif;
+            line-height: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            word-spacing: 3px;
+        }
+    }
+
+    .main-logo a {
+        font-size: 26px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
     }
 
     .h-cont {
@@ -65,11 +105,11 @@
 }
 
 /* Logo */
-.mmorph-black {
+.mp-black {
     color: $black;
 }
 
-.mmorph-primary {
+.mp-primary {
     color: $primary !important;
 }
 
@@ -82,7 +122,7 @@
 .above-the-fold {
     height: 100vh;
     position: relative;
-    background: $bg1;
+    background: $aboveTheFoldBg2;
 
     .section-actions {
         display: flex;
@@ -109,13 +149,33 @@
 /* Floating */
 .header-user-dropdown {
     position: absolute;
-    right: 0;
-    top: 80px;
+    right: 10px;
+    top: 70px;
     background: $white;
     width: 200px;
+    border-radius: $divBorderRadius;
+    border: solid 1px $lightBorder;
+    box-shadow: $boxShadow1;
+    overflow: hidden;
+    cursor: pointer;
 
     .dropdown-el {
         padding: 15px;
+        font-size: 15px;
+        border-bottom: 1px solid $lightBorder;
+
+        &:hover {
+            background-color: $bgGray;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: $fInter
+        }
+    }
+
+    .dropdown-el:last-child {
+        border: none;
     }
 }
 

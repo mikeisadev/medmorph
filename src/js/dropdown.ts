@@ -4,7 +4,10 @@ const dropdownMenus: NodeList = document.querySelectorAll('.dropdown-menu');
 // Open dropdown menu on click.
 dropdownBtns.forEach(btn => {
     btn.addEventListener('click', e => {
+        e.stopImmediatePropagation()
         const menu = document.querySelector(`.dropdown-menu[data-dropdown-menu=${(btn as Element).getAttribute('data-dropdown-menu')}]`);
+
+        console.log(menu)
 
         menu?.classList.toggle('hide');
     });

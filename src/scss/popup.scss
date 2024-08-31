@@ -12,6 +12,20 @@
     padding: 10px;
 }
 
+.fullw-popup {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.flex-center-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: $divBorderRadius;
+    box-shadow: $boxShadow1;
+}
+
 #r-portal {
     display: flex;
     justify-content: center;

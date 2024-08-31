@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
-<div class="w-100 h-100 bg-1 py-20">
+<div class="w-100 h-100 bg-1" style="height: 100vh;">
 
-    <div class="m-auto h-w100 w-max-content">
-        <div class="mb-10 ta-center">
-            <?= mp_get_template(name: 'logo'); ?>
-        </div>
+    <div class="m-auto h-w100 w-max-content" style="margin-left:0; margin-right: auto;position: fixed;overflow-y: scroll;">
         <div class="bg-white p-20">
+            <div class="mb-10 ta-center">
+                <?= mp_get_template(name: 'logo'); ?>
+            </div>
 
             <h4 class="ta-center mb-20">Registrati come studente</h4>
             

@@ -1,9 +1,13 @@
 import { createRoot } from "react-dom/client";
-import http from "../../http";
-import { userSupervisorEP } from "../../config"
-import LoginPopUp from "../templates/LoginPopUp";
-import CustomizeExamExperience from "../user/exam/CustomizeExamExperience";
-import '../../http';
+import http from "../../../http";
+import { userSupervisorEP } from "../../../config"
+import LoginPopUp from "../../templates/LoginPopUp";
+import '../../../http';
+import { rPortal } from "../../../App";
+import CustomizeExamExperience from "../../user/exam/CustomizeExamExperience";
+
+// Home page additional partials
+import './HomeABF'
 
 const startExamBtns = document.querySelectorAll('a[data-action="start-exam"]')
 
@@ -16,6 +20,9 @@ startExamBtns.forEach(btn => {
         e.preventDefault()
         e.stopPropagation()
 
+        // Get data about exam.
+        const examURL = (btn as HTMLAnchorElement).href
+
         // AJAX call.
         http.get(userSupervisorEP)
             .then(resp => {
@@ -27,12 +34,14 @@ startExamBtns.forEach(btn => {
 
                 switch(data.user) {
                     case 'logged-out':
-                        root.render( <LoginPopUp /> )
+                        root.render( <LoginPopUp examURL={examURL} /> )
 
                         break
 
                     case 'logged-in':
-                        window.location = (btn as HTMLAnchorElement).href
+                        // window.location.href = (btn as HTMLAnchorElement).href
+                        root.render( <CustomizeExamExperience examURL={examURL}/> )
+
                         break
                 }
             })

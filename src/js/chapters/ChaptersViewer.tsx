@@ -26,9 +26,6 @@ export default function ChaptersViewer() {
 
     return (
         <>
-            <p>
-                
-            </p>
             {   
             paragraphs ? 
                 <>

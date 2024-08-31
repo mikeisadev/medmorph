@@ -95,9 +95,19 @@ class Exams {
                 ];
             }
 
-            wp_send_json( $chaps, 200 );
+            wp_send_json([
+                'status'        => 'success',
+                'status-code'   => 'read-available-exams',
+                'response'      => [
+                    'exam' => $chaps
+                ]
+            ], 200);
         } else {
-            wp_send_json( 'Nessun capitolo disponibile per questo esame.' );
+            wp_send_json([
+                'status'        => 'error',
+                'status-code'   => 'no-exam-available',
+                'message'       => '<p>Questo esame non ha capitoli e deve essere completato. <br/> Iscriviti alla newsletter se vuoi essere notificato.</p>'
+            ]);
         }
 
     }

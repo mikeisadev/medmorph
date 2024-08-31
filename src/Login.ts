@@ -42,7 +42,7 @@ loginForm?.addEventListener('submit', e => {
                 ?.parentElement
                 ?.insertAdjacentHTML(
                     'beforeend',
-                    `${ data.messages[f].map(m => `<p class="val error">${m}</p>`) }`
+                    `${ data.messages[f].map((m: String) => `<p class="val error">${m}</p>`) }`
                 )
             }
 
