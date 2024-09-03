@@ -41,52 +41,29 @@
             if (!is_user_logged_in()) { ?>
                 <div class="dropdown-menu header-user-dropdown hide" data-dropdown-menu="user-endpoints">
                     <?php 
-                        foreach (wp_get_nav_menu_items('menù-di-accesso') as $item) {
-                        ?>
-                    <div class="dropdown-el">
-                        <a href="<?= esc_attr( $item->url ) ?>">
-                            <?= esc_html( $item->title ); ?>
-                        </a>
-                    </div>
-                    <?php
-                }
-                ?>
+                        foreach (wp_get_nav_menu_items('menù-di-accesso') as $item) { ?>
+                            <a class="dropdown-el" href="<?= esc_attr( $item->url ) ?>">
+                                <?= esc_html( $item->title ); ?>
+                            </a>
+                    <?php } ?>
             </div>
             <?php } else { ?>
                 <div class="dropdown-menu header-user-dropdown hide" data-dropdown-menu="user-endpoints">
-                    <div class="dropdown-el">
-                        <a href="">Bacheca</a>
-                    </div>
-                    <div class="dropdown-el">
-                        <a href="">Il mio account</a>
-                    </div>
-                    <div class="dropdown-el">
-                        <a href="">Esami</a>
-                    </div>
-                    <div class="dropdown-el">
-                        <a style="color:red;" href="<?= esc_url( wp_logout_url( get_site_url() ) )  ?>">Esci</a>
-                    </div>
+                    <a class="dropdown-el" href="">Bacheca</a>
+                    <a class="dropdown-el" href="">Il mio account</a>
+                    <a class="dropdown-el" href="">Esami</a>
+                    <a class="dropdown-el" style="color:red;" href="<?= esc_url( wp_logout_url( get_site_url() ) )  ?>">Esci</a>
                 </div>
 
                 <div class="dropdown-menu header-user-dropdown hide" data-dropdown-menu="user-apps">
-                    <div class="dropdown-el">
-                        <a href="">Esami</a>
-                    </div>
-                    <div class="dropdown-el">
-                        <a href="">Modelli 3D</a>
-                    </div>
-                    <div class="dropdown-el">
-                        <a href="">Mappe</a>
-                    </div>
-                    <div class="dropdown-el">
-                        <a href="">Note</a>
-                    </div>
+                    <a class="dropdown-el" href="">Esami</a>
+                    <a class="dropdown-el" href="">Modelli 3D</a>
+                    <a class="dropdown-el" href="">Mappe</a>
+                    <a class="dropdown-el" href="">Note</a>
                 </div>
 
                 <div class="dropdown-menu header-user-dropdown hide" data-dropdown-menu="user-nots">
-                    <div class="dropdown-el">
-                        <p>Nessuna notifica al momento</p>
-                    </div>
+                    <p>Nessuna notifica al momento</p>
                 </div>
             <?php } ?> 
         </div>

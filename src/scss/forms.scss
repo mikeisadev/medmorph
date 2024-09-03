@@ -13,8 +13,9 @@ form {
         border-color: $border2;
         border-style: solid;
         border-width: 1px;
-        padding: 12px 8px;
+        padding: 10px 12px;
         border-radius: $btnBorderRadius;
+        box-shadow: inset 0px 1px 1.5px 0.2px rgb(0 0 0 / 15%)
     }
 
     .field {

@@ -10,31 +10,64 @@
     width: 80%;
     height: max-content;
     padding: 10px;
+    z-index: 9;
+
+    .close-popup {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        i {
+            font-size: 20px;
+        }
+    }
 }
 
 .fullw-popup {
-    width: 100% !important;
-    height: 100% !important;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    margin: 30px;
+    border-radius: 18px;
+    z-index: 9;
 }
 
 .flex-center-popup {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20px;
+    padding: 20px;
     border-radius: $divBorderRadius;
     box-shadow: $boxShadow1;
 }
 
-#r-portal {
+.popup-inner {
+    .exam-info {
+        border-width: 0 1px 0 0;
+        border-style: solid;
+        border-color: $lightBorder;
+    }
+}
+
+#portals {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0000003d;
-    z-index: 99999;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 4;
+
+    .overlay {
+        z-index: 6;
+        background: #0000003d;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }

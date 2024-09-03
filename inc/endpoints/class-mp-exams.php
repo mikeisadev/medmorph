@@ -71,6 +71,7 @@ class Exams {
         $examId = get_page_by_path(end($slug), ARRAY_A, 'mp_exams')['ID'];
 
         // Get exam chapters.
+        $title = get_the_title( $examId );
         $chapters = carbon_get_post_meta($examId, 'exam_chapters');
 
         if ( $chapters ) {
@@ -99,7 +100,12 @@ class Exams {
                 'status'        => 'success',
                 'status-code'   => 'read-available-exams',
                 'response'      => [
-                    'exam' => $chaps
+                    'exam' => [
+                        'title'          => $title,
+                        'has_3d_models'  => carbon_get_post_meta($examId, 'exam_has_3d_models'),
+                        'has_mindmaps'   => carbon_get_post_meta($examId, 'exam_has_conceptual_maps'),
+                        'chapters'       => $chaps
+                    ]
                 ]
             ], 200);
         } else {

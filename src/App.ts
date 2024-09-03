@@ -1,7 +1,18 @@
 /**
  * React anchors
  */
-const rPortal = document.querySelector('#r-portal')
+const portals: Element = document.querySelector('#portals') as Element
+const body: Element    = document.body
+
+// Functions
+// portals?.addEventListener('click', e => {
+//     e.stopImmediatePropagation()
+
+//     if (!portals.classList.contains('hide')) {
+//         portals.querySelector('div')?.remove()
+//         portals.classList.add('hide')
+//     }
+// })
 
 /**
  * Main script.
@@ -16,5 +27,6 @@ import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
 import './scss/main.scss';
 
 export {
-    rPortal
+    portals,
+    body
 }

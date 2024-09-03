@@ -3,22 +3,21 @@ import http from "../../../http";
 import { userSupervisorEP } from "../../../config"
 import LoginPopUp from "../../templates/LoginPopUp";
 import '../../../http';
-import { rPortal } from "../../../App";
+import { portals } from "../../../App";
 import CustomizeExamExperience from "../../user/exam/CustomizeExamExperience";
 
 // Home page additional partials
 import './HomeABF'
 
+// Elements
 const startExamBtns = document.querySelectorAll('a[data-action="start-exam"]')
-
-const rootSelector = document.querySelector('#r-portal') as Element
-const root = createRoot(document.querySelector('#r-portal') as Element)
 
 startExamBtns.forEach(btn => {
     btn.addEventListener('click', e => {
         // Prevent default behavior
         e.preventDefault()
         e.stopPropagation()
+        e.stopImmediatePropagation()
 
         // Get data about exam.
         const examURL = (btn as HTMLAnchorElement).href
@@ -30,7 +29,9 @@ startExamBtns.forEach(btn => {
 
                 console.log(data)
 
-                rootSelector.classList.remove('hide')
+                portals.classList.remove('hide')
+
+                const root = createRoot(portals as HTMLElement)
 
                 switch(data.user) {
                     case 'logged-out':

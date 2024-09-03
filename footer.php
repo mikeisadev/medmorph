@@ -1,6 +1,8 @@
 <?php defined( 'ABSPATH' ) || exit; ?>
     
-    <div id="r-portal" class="hide"></div>
+    <div id="portals" class="hide">
+        <div class="overlay"></div>
+    </div>
     
     <?php wp_footer(); ?>
     </body>

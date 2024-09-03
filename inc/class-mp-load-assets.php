@@ -75,6 +75,8 @@ class LoadAssets {
             wp_enqueue_script('StudentPrivArea', MP_URL . 'build/MyAccountRenderer.js', [], '1.0', $this->script_conf);
         }
 
+        wp_enqueue_script('ParagraphModel', MP_URL . 'build/ParagraphModelRenderer.js', [], '1.0', $this->script_conf);
+
     }
 
 }

@@ -10,6 +10,7 @@
     border-color: $lightBorder;
     position: fixed;
     top: 0;
+    z-index: 2;
 
     .header-wrap {
         display: flex;
@@ -160,17 +161,16 @@
     cursor: pointer;
 
     .dropdown-el {
+        display: block;
         padding: 15px;
         font-size: 15px;
         border-bottom: 1px solid $lightBorder;
+        text-decoration: none;
+        text-decoration: none;
+        font-family: $fInter;
 
         &:hover {
             background-color: $bgGray;
-        }
-
-        a {
-            text-decoration: none;
-            font-family: $fInter
         }
     }
 
