@@ -27,7 +27,7 @@ export default function ChapterListing() {
         http.get(examChaptersEP + '?exam-slug=' + location.pathname)
             .then(res => {
                 console.log(res.data.response.exam.chapters)
-                setChapters(res.data)
+                setChapters(res.data.response.exam.chapters)
             })
             .catch(err => {
                 throw err;

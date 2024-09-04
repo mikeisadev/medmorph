@@ -16,7 +16,7 @@ export default function ChaptersViewer() {
     useEffect(() => {
         http.get(singleChapterEP + location.search)
             .then(res => {
-                console.log(res.data)
+                console.log(res.data, 'ciao')
                 setParagraphs(res.data)
             })
             .catch(err => {

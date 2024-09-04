@@ -101,6 +101,26 @@ export default function ParagraphModel() {
                                 }
                                 </ul>
 
+                                <div>
+                                    <label htmlFor="3dmodel">Modello 3D:</label>
+                                    <select id="3dmodel" name="3dmodel">
+                                        <option value="apple">Esempio 1</option>
+                                        <option value="banana">Esempio 2</option>
+                                        <option value="orange">Esempio 3</option>
+                                        <option value="grape">Esempio 4</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="mappe">Mappe:</label>
+                                    <select id="mappe" name="mappe">
+                                        <option value="apple">mappa 1</option>
+                                        <option value="banana">mappa 2</option>
+                                        <option value="orange">mappa 3</option>
+                                        <option value="grape">mappa 4</option>
+                                    </select>
+                                </div>
+
                                 <button 
                                     style={{margin: '10px 0 0 0', display: 'block'}} 
                                     onClick={e => generateWithAi(e, pTitle)}>
