@@ -9,3 +9,26 @@
         width: 100%;
     }
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 680px) {
+
+}
+
+@media (max-width: 576px) {
+    #maintenance-container {
+        padding: 10px !important;
+
+        .container-wrap {
+            width: 100% !important;
+            padding: 16px !important;
+        }
+    }
+}

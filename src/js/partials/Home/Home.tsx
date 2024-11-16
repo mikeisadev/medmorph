@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { createRoot } from "react-dom/client";
 import http from "../../../http";
 import { userSupervisorEP } from "../../../config"
@@ -22,6 +23,9 @@ startExamBtns.forEach(btn => {
         // Get data about exam.
         const examURL = (btn as HTMLAnchorElement).href
 
+        // Login popup reference.
+        const loginPopUpRef = useRef(null)
+
         // AJAX call.
         http.get(userSupervisorEP)
             .then(resp => {
@@ -35,7 +39,7 @@ startExamBtns.forEach(btn => {
 
                 switch(data.user) {
                     case 'logged-out':
-                        root.render( <LoginPopUp examURL={examURL} /> )
+                        root.render( <LoginPopUp ref={loginPopUpRef} examURL={examURL} /> )
 
                         break
 

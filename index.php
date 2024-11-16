@@ -1,3 +1,15 @@
+<?php
+
+/**
+ * If the website is on maintenance.
+ */
+if (MP_IS_ON_MAINTENANCE) {
+    require_once MP_DIR . 'inc/templates/pages/maintenance.php';
+    return;
+}
+
+?>
+
 <?php get_header(); ?>
 
 <div class="section above-the-fold m-auto index-1 flex flex-col align-center">

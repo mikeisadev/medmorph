@@ -77,6 +77,12 @@ class LoadAssets {
 
         wp_enqueue_script('ParagraphModel', MP_URL . 'build/ParagraphModelRenderer.js', [], '1.0', $this->script_conf);
 
+        // Maintenance page
+        if (MP_IS_ON_MAINTENANCE) {
+            wp_enqueue_script('maintenance', MP_URL . 'build/Maintenance.js', [], '1.0', $this->script_conf);
+            wp_enqueue_style('maintenance', MP_URL . 'build/Maintenance.css');
+        }
+
     }
 
 }

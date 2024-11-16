@@ -14,8 +14,10 @@ use Moorph\Inc\Theme\Endpoints\Chapters;
 use Moorph\Inc\Theme\Endpoints\User\UserSupervisor;
 use Moorph\Inc\Theme\Endpoints\User\UserLogin;
 use Moorph\Inc\Theme\Endpoints\User\StudentRegistration;
+use Moorph\Inc\Theme\Endpoints\LeadGeneration\NewsletterLeads;
 use Moorph\Inc\Admin\PostData;
 use Moorph\Inc\Theme\UserInterfaceMods;
+use Moorph\Inc\Theme\Redirects;
 
 final class Moorph {
 
@@ -117,6 +119,15 @@ final class Moorph {
         require_once MP_DIR . 'inc/endpoints/user/class-mp-user-supervisor.php';
         require_once MP_DIR . 'inc/endpoints/user/class-mp-user-login.php';
         require_once MP_DIR . 'inc/endpoints/user/class-mp-student-registration.php';
+
+        // Lead generation Rest API endpoints.
+        require_once MP_DIR . 'inc/endpoints/lead-generation/class-mp-newsletter-leads.php';
+
+        // Redirects
+        require_once MP_DIR . 'inc/class-mp-redirects.php';
+
+        // Models.
+        require_once MP_DIR . 'inc/models/class-mp-newsletter-sub-model.php';
     }
 
     /**
@@ -136,9 +147,17 @@ final class Moorph {
         // REST API endpoints.
         Exams::getInstance();
         Chapters::getInstance();
+
+        // User REST API endpoints.
         UserSupervisor::getInstance();
         UserLogin::getInstance();
         StudentRegistration::getInstance();
+
+        // Lead generation REST API endpoints.
+        NewsletterLeads::getInstance();
+
+        // Redirects
+        Redirects::getInstance();
     }
 
 }

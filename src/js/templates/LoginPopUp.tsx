@@ -4,8 +4,9 @@ import { userLoginEP } from '../../config'
 import http from "../../http"
 import CustomizeExamExperience from "../user/exam/CustomizeExamExperience";
 import { portals } from "../../App";
+import LoginPopUpInterface from "../../types/interfaces";
 
-const LoginPopUp = forwardRef(function LoginPopUp({examURL, ref}) {
+const LoginPopUp: React.FC<LoginPopUpInterface> = forwardRef(function LoginPopUp({examURL}, ref) {
     const loginFormRef = useRef<null|HTMLFormElement>(null)
     
     const submit = (e: any) => {

@@ -87,7 +87,7 @@ class StudentRegistration {
         }
 
         // Specific validation
-        if (!is_email( $body['email'] ) and $body['email']) {
+        if (!is_email( $body['email'] ) && $body['email']) {
             $this->errors['email'] = ['Indirizzo mail non valido.'];
         }
 

@@ -222,6 +222,36 @@ class PostTypes {
             'menu_position'         => 20,
             'show_in_rest'          => true,
             'supports'              => ['title']
+        ],
+        'mp_newslettersubs' => [
+            'label'                 => 'Iscritti newsletter',
+            'labels'                => [
+                'name'                  => 'Iscritti newsletter',
+                'singular_name'         => 'Iscritto newsletter',
+                'menu_name'             => 'Iscritti newsletter',
+                'all_items'             => 'Tutti i modelli',
+                'add_new'               => 'Aggiungi una nuova Iscritto newsletter',
+                'add_new_item'          => 'Aggiungi una nuova Iscritto newsletter',
+                'edit_item'             => 'Modifica Iscritto newsletter',
+                'new_item'              => 'Nuova Iscritto newsletter',
+                'view_item'             => 'Visualizza Iscritto newsletter',
+                'search_items'          => 'Cerca Iscritto newsletter',
+                'not_found'             => 'Nessuna Iscritto newsletter trovata',
+                'not_found_in_trash'    => 'Nessuna Iscritto newsletter nel cestino'
+            ],
+            'description'           => 'In questa sezione potrai gestire tutti gli iscritti alla newsletter.',
+            'menu_icon'             => 'dashicons-admin-users',
+            'public'                => false,
+            'publicly_queryable'    => false,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'query_var'             => true,
+            'capability_type'       => 'post',
+            'has_archive'           => false,
+            'hierarchical'          => false,
+            'menu_position'         => 20,
+            'show_in_rest'          => false,
+            'supports'              => ['title']
         ]
     ];
 
@@ -251,6 +281,7 @@ class PostTypes {
         // Add fields
         add_action( 'carbon_fields_register_fields', [ $this, 'exams_fields' ] );
         add_action( 'carbon_fields_register_fields', [ $this, 'chapters_fields' ] );
+        add_action( 'carbon_fields_register_fields', [ $this, 'newsletter_users' ] );
     }
 
     /**
@@ -317,6 +348,24 @@ class PostTypes {
                         'post_type' => 'mmp_mindmaps',
                     )
             ) )
+        ]);
+    }
+
+    /**
+     * Newsletter users
+     */
+    public function newsletter_users() {
+        Container::make( 'post_meta', 'Informazioni iscritto' )
+        ->where( 'post_type', '=', 'mp_newslettersubs' )
+        ->add_fields([
+            Field::make( 'text', 'sub_name', 'Nome e cognome iscritto' )
+                ->set_attribute('readOnly', true),
+            Field::make( 'text', 'sub_email', 'Email iscritto' )
+                ->set_attribute('readOnly', true),
+            Field::make( 'text', 'sub_origin', 'Origine iscrizione' )
+                ->set_attribute('readOnly', true),
+            Field::make( 'text', 'sub_date', 'Data iscrizione' )    
+                ->set_attribute('readOnly', true)
         ]);
     }
     
