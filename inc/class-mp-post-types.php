@@ -252,6 +252,67 @@ class PostTypes {
             'menu_position'         => 20,
             'show_in_rest'          => false,
             'supports'              => ['title']
+        ],
+        'mp_wiki' => [
+            'label'                 => 'Termini enciclopedia',
+            'labels'                => [
+                'name'                  => 'Termini enciclopedia',
+                'singular_name'         => 'Termine',
+                'menu_name'             => 'Termini enciclopedia',
+                'all_items'             => 'Tutti i termini',
+                'add_new'               => 'Aggiungi un nuovo termine',
+                'add_new_item'          => 'Aggiungi un nuovo termine',
+                'edit_item'             => 'Modifica termine',
+                'new_item'              => 'Nuovo termine',
+                'view_item'             => 'Visualizza termine',
+                'search_items'          => 'Cerca termine',
+                'not_found'             => 'Nessun termine trovato',
+                'not_found_in_trash'    => 'Nessun termine nel cestino'
+            ],
+            'description'           => 'In questa sezione potrai gestire tutti i termini dell\'enciclopedia Moorph.',
+            'menu_icon'             => 'dashicons-book-alt',
+            'public'                => true,
+            'publicly_queryable'    => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'query_var'             => true,
+            'capability_type'       => 'post',
+            'has_archive'           => true,
+            'hierarchical'          => true,
+            'menu_position'         => 20,
+            'show_in_rest'          => true,
+            'rewrite'               => ['slug' => 'termine'],
+            'supports'              => ['title', 'editor']
+        ],
+    ];
+
+    /**
+     * Custom taxonomies to register for custom post types.
+     */
+    private array $postTaxonomies = [
+        'mp_wiki' => [
+            'taxonomy_id'              => 'mp_wiki_category',
+            'taxonomy_conf'            => [
+                'label' => 'Categoria termine',
+                'hierarchical' => false,
+                'rewrite' => ['slug' => 'term-category'],
+                'show_admin_column' => true,
+                'show_in_rest' => true,
+                'labels' => [
+                    'singular_name' => 'Categoria',
+                    'all_items' => 'Tutte le categorie',
+                    'edit_item' => 'Modifica categoria',
+                    'view_item' => 'Vedi categoria',
+                    'update_item' => 'Aggiorna categoria',
+                    'add_new_item' => 'Aggiungi nuova categoria',
+                    'new_item_name' => 'Nome della nuova categoria',
+                    'search_items' => 'Cerca categoria',
+                    'popular_items' => 'Categorie popolari',
+                    'separate_items_with_commas' => 'Separa categorie con virgola',
+                    'choose_from_most_used' => 'Scegli dalle categorie più usate',
+                    'not_found' => 'Nessuna categoria trovata',
+                ]
+            ]
         ]
     ];
 
@@ -277,6 +338,7 @@ class PostTypes {
     private function __construct() {
         // Register post types.
         add_action('init', [$this, 'register_post_types']);
+        add_action('init', [$this, 'register_custom_taxonomy_post_type']);
 
         // Add fields
         add_action( 'carbon_fields_register_fields', [ $this, 'exams_fields' ] );
@@ -290,6 +352,15 @@ class PostTypes {
     public function register_post_types() {
         foreach ($this->postTypes as $postKey => $args) {
             register_post_type( $postKey, $args );
+        }
+    }
+
+    /**
+     * Register custom taxonomy of custom post types.
+     */
+    public function register_custom_taxonomy_post_type() {
+        foreach ($this->postTaxonomies as $postKey => $args) {
+            register_taxonomy( $args['taxonomy_id'], $postKey, $args['taxonomy_conf'] );
         }
     }
 

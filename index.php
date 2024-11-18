@@ -1,9 +1,11 @@
 <?php
 
+use Moorph\Inc\Config;
+
 /**
  * If the website is on maintenance.
  */
-if (MP_IS_ON_MAINTENANCE) {
+if (MP_IS_ON_MAINTENANCE && !Config::is_page_not_redirectable()) {
     require_once MP_DIR . 'inc/templates/pages/maintenance.php';
     return;
 }

@@ -27,7 +27,7 @@ get_header();
 
                 <p class="field-r">
                     <input id="gdpr-acceptance-1" type="checkbox" name="gdpr-acceptance-1"/>
-                    <label for="gdpr-acceptance-1">Accetto la <a href="">privacy policy</a> di questo sito (<?= get_option('siteurl') ?>)</label>
+                    <label for="gdpr-acceptance-1">Accetto la <a href="<?= esc_url('/privacy-policy'); ?>">privacy policy</a> di questo sito (<?= get_option('siteurl') ?>)</label>
                 </p>
 
                 <button name="s-register" class="filled-btn" type="submit">Iscriviti ora!</button>
